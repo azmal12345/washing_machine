@@ -1,0 +1,647 @@
+@import "toasterMachineColor";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Prompt', sans-serif;
+    background-color: #0acef905;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    // z-index: 5;
+}
+
+.short_circuit_background{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 250px;
+    height: 185px;
+    background-color: $white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: inset -1px -3px 20px -6px rgba(0,0,0,0.5);
+    z-index: 5;
+}
+
+.short_circuit_display{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    position: relative;
+
+    .nut{
+        width: 19.50px;
+        height: 19.50px;
+        background-color: $sliver;
+        border-radius: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+        -webkit-border-radius: 100%;
+        box-shadow: inset 0 0 10px #000000;
+        cursor: pointer;
+
+        &::before{
+            position: absolute;
+            top: 14px;
+            content: "";
+            width: 19.5px;
+            height: 2px;
+            box-shadow: inset 0 0 10px $sliver;
+        }
+
+        &::after{
+            position: absolute;
+            top: 14px;
+            content: "";
+            width: 17.50px;
+            height: 2px;
+            box-shadow: inset 0 0 10px $sliver;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+       }
+    }
+
+    .top{
+        position: absolute;
+        top: 100px;
+    }
+}
+
+// ************************* curcile  ********************************
+
+.curcile{
+    position: absolute;
+    left: 50%;
+    width: 135px;
+    height: 125px;
+    background-color: $white;
+    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-70%, 0%);
+    -moz-transform: translate(-70%, 0%);
+    -ms-transform: translate(-70%, 0%);
+    -o-transform: translate(-70%, 0%);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: 2px 4px 20px -6px rgba(0,0,0,0.5);
+
+    &::before{
+        position: absolute;
+        top: 6%;
+        left: 6%;
+        content: "";
+        width: 119px;
+        height: 105px;
+        background-color: $black;
+        border-top-left-radius: 70px;
+        border-top-right-radius: 70px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    &::after{
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        content: "";
+        width: 20px;
+        height: 90px;
+        background-color: $black;
+        transform: translate(-50%, 0%);
+        -webkit-transform: translate(-50%, 0%);
+        -moz-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        -o-transform: translate(-50%, 0%);
+        border-bottom-left-radius: 10px;
+}
+
+.curcile_top1{
+    width: 25px;
+    height: 21px;
+    background-color: rgb(3, 28, 250);
+    position: absolute;
+    top: 145%;
+    left: 138%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    animation: curcleBox 0.5s ease infinite;
+    -webkit-animation: curcleBox 0.5s ease infinite;
+    display: none;
+
+    @keyframes curcleBox{
+        0%{background-color: rgb(255, 0, 0);}
+        20%{background-color: rgb(217, 255, 0);}
+        40%{background-color: rgb(51, 255, 0);}
+        60%{background-color: rgb(38, 0, 255);}
+        80%{background-color: rgb(255, 0, 212);}
+        100%{background-color: rgb(7, 247, 227);}
+    }
+}
+
+.curcileTop{
+    display: block;
+}
+
+    .curcile_top{
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        background-color: #2b2a2ab9;
+        transform: translate(-50%, 0%);
+        -webkit-transform: translate(-50%, 0%);
+        -moz-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        -o-transform: translate(-50%, 0%);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+        &::before{
+            width: 150px;
+            height: 20px;
+            background-color: $black;
+            position: absolute;
+            top: 172px;
+            left: 5px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            content: "";
+        }
+    }
+
+    .carcile_display{
+        width: 100%;
+        padding: 0 10px;
+        position: absolute;
+        top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .curcile_round{
+            width: 20px;
+            height: 20px;
+            background-color: #2b2a2ab9;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+       }
+    }
+}
+
+// ************************* button ********************************
+
+
+.button{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    
+    .button_height_width{
+        position: absolute;
+        top: 0;
+        right: 20px;
+        width: 50px;
+        height: 125px;
+        background-color: $white;
+        z-index: 1;
+        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+        -moz-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        -o-transform: translateY(30px);
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        box-shadow: 2px 4px 20px -6px rgba(0,0,0,0.5);
+
+        .button_curciel{
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            right: 0;
+            content: "";
+            width: 100%;
+            height: 50%;
+            background-color: $white;
+            box-shadow: inset 0 0 0px #000000, inset 0 0 10px #000000;
+            transform: translate(-50%, -0%);
+            -webkit-transform: translate(-50%, -0%);
+            -moz-transform: translate(-50%, -0%);
+            -ms-transform: translate(-50%, -0%);
+            -o-transform: translate(-50%, -0%);
+            cursor: pointer;
+            display: block;
+}
+
+       .button_curciel.addButton{
+        display: none;
+    }
+
+       .button_curciel1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: 0;
+        content: "";
+        width: 100%;
+        height: 50%;
+        background-color: $white;
+        box-shadow: inset 0 0 0px #000000, inset 0 0 10px #000000;
+        transform: translate(-50%, -0%);
+        -webkit-transform: translate(-50%, -0%);
+        -moz-transform: translate(-50%, -0%);
+        -ms-transform: translate(-50%, -0%);
+        -o-transform: translate(-50%, -0%);
+        cursor: pointer;
+        display: block;
+   }
+
+   .button_curciel1.downAddButton{
+       display: none;
+   }
+
+   }
+}
+
+
+// ************************* change background ********************************
+.containerBox{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: orangered;
+    clip-path: circle(100px at 100% -50%);
+    transition: 0.8s ease;
+    -webkit-transition: 0.8s ease;
+    -moz-transition: 0.8s ease;
+    -ms-transition: 0.8s ease;
+    -o-transition: 0.8s ease;
+}
+
+.containerBox.showBackgroundColor{
+    clip-path: circle(6000px at 100% -50%);
+    transition: 2s ease;
+    -webkit-transition: 2s ease;
+    -moz-transition: 2s ease;
+    -ms-transition: 2s ease;
+    -o-transition: 2s ease;
+}
+
+// ************************* toaster Maker ********************************
+
+.totaster_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+
+    .totaster{
+        width: 35%;
+        margin: 100px auto 0 auto;
+        height: 70%;
+        background-color: red;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        box-shadow: 5px 8px 8px -6px rgba(0,0,0,0.5);
+
+        .totaster_top{
+            width: 80%;
+            margin: 0 auto;
+            height: 50px;
+            background-color: black;
+        }
+
+        .totaster_line{
+            position: absolute;
+            top: 27%;
+            left: 50%;
+            width: 30px;
+            height: 290px;
+            background-color: black;
+            transform: translate(-50%, -0%);
+            -webkit-transform: translate(-50%, -0%);
+            -moz-transform: translate(-50%, -0%);
+            -ms-transform: translate(-50%, -0%);
+            -o-transform: translate(-50%, -0%);
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+       }
+    }
+}
+
+// ******************************************* washing maching **********************************
+
+svg{
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    height: 500px;
+}
+
+
+// javascript 
+.svgMove{
+    animation: moveBox 1s ease infinite;
+    -webkit-animation: moveBox 1s ease infinite;
+}
+
+@keyframes moveBox{
+    0%{
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+  50%{
+    transform: translateX(-10px);
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    -o-transform: translateX(-10px);
+}
+100%{
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+}
+
+
+.svg1,.svg2,
+.svg3,.svg4,
+.svg5,.svg6,
+.svg7,.svg8,
+.svg9,.svg10,
+.svg11,.svg12{
+    cursor: pointer;
+}
+
+.svg6{
+    animation: roundCuricle 1s ease infinite;
+    -webkit-animation: roundCuricle 1s ease infinite;
+}
+
+.svg7{
+    animation: roundCuricle1 0.80s ease infinite;
+    -webkit-animation: roundCuricle1 0.80s ease infinite;
+}
+
+.svg10,.svg11,.svg12{
+    animation: maineBox 0.5s ease infinite;
+    -webkit-animation: maineBox 0.5s ease infinite;
+}
+
+.svg6,.svg7,
+.svg10,.svg11,
+.svg12{
+    display: none;
+}
+
+.svgActive{
+    display: block;
+}
+
+@keyframes roundCuricle{
+    0%{fill: red;}
+    20%{fill: green;}
+    40%{fill: blue;}
+    60%{fill: orangered;}
+    80%{fill: orange;}
+    100%{fill: purple;}
+}
+
+@keyframes roundCuricle1{
+    0%{fill: rgb(236, 0, 236);}
+    20%{fill: rgba(255, 166, 0, 0.788);}
+    40%{fill: rgb(0, 255, 242);}
+    60%{fill: rgb(255, 255, 255);}
+    80%{fill: rgb(0, 255, 0);}
+    100%{fill: rgb(206, 45, 45);}
+}
+
+@keyframes maineBox{
+    0%{fill: purple;}
+    20%{fill: rgb(1, 211, 46);}
+    40%{fill: rgb(255, 0, 221);}
+    60%{fill: rgb(8, 3, 1);}
+    80%{fill: rgb(128, 23, 20);}
+    100%{fill: rgb(0, 225, 255);}
+}
+
+.text{
+    fill: red;
+}
+
+
+// ********************************* loadding ***********************************
+.chnageColor{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0,0,0);
+}
+
+.container_center_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+
+    img{
+        width: 50px;
+        position: absolute;
+        top: -60px;
+        right: 0;
+        animation: cartton 15s ease;
+        -webkit-animation: cartton 15s ease;
+}
+
+    .loadingLine{
+        width: 600px;
+        height: 25px;
+        background-color: orangered;
+}
+
+    .cartto{
+        position: absolute;
+        top: -95px;
+        left: -15px;
+    }
+}
+
+@keyframes cartton{
+    0%{right: 5px;}
+    10%{right: 60px;}
+    20%{right: 120;}
+    30%{right: 180px;}
+    45%{right: 240px;}
+    50%{right: 300px;}
+    60%{right: 360px;}
+    70%{right: 420px;}
+    80%{right: 480px;}
+    90%{right: 540px;}
+    100%{right: 570px;}
+}
+
+// main svg javascript
+
+.popShow{
+    display: none;
+}
+
+// ********************************* media queery ********************************
+
+
+@media screen and (max-width: 892px){
+    svg{
+        width: 80%;
+        left: 70%;
+        transform: translate(-50%, 0%);
+        -webkit-transform: translate(-50%, 0%);
+        -moz-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        -o-transform: translate(-50%, 0%);
+}
+
+   svg{
+       top: 5%;
+       left: 70%;
+       width: 100%;
+  }
+}
+
+@media screen and (max-width: 632px){
+    svg{
+        top: 50%;
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        -webkit-transform: translate(-50%, 0%);
+        -moz-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        -o-transform: translate(-50%, 0%);
+   }
+
+   .short_circuit_background {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 90%;
+    height: 185px;
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+  }
+
+  .container_center_box .loadingLine {
+    width: 500px;
+  }
+
+  @keyframes cartton{
+    0%{right: 5px;}
+    10%{right: 40px;}
+    20%{right: 80;}
+    30%{right: 120px;}
+    45%{right: 160px;}
+    50%{right: 200px;}
+    60%{right: 240px;}
+    70%{right: 280px;}
+    80%{right: 320px;}
+    90%{right: 360px;}
+    100%{right: 420px;}
+ }
+}
+
+@media screen and (max-width: 517px){
+    .container_center_box .loadingLine {
+        width: 400px;
+      }
+
+      @keyframes cartton{
+        0%{right: 0px;}
+        10%{right: 40px;}
+        20%{right: 80;}
+        30%{right: 120px;}
+        45%{right: 150px;}
+        50%{right: 190px;}
+        60%{right: 220px;}
+        70%{right: 250px;}
+        80%{right: 290px;}
+        90%{right: 320px;}
+        100%{right: 350px;}
+     }
+}
+
+@media screen and (max-width: 432px){
+    .container_center_box .loadingLine {
+        width: 300px;
+      }
+
+      @keyframes cartton{
+        0%{right: 0px;}
+        10%{right: 30px;}
+        20%{right: 60;}
+        30%{right: 90px;}
+        45%{right: 120px;}
+        50%{right: 150px;}
+        60%{right: 180px;}
+        70%{right: 210px;}
+        80%{right: 240px;}
+        90%{right: 250px;}
+        100%{right: 260px;}
+     }
+
+     .svgMove{
+        animation: no 1s ease infinite;
+        -webkit-animation: no 1s ease infinite;
+}
+}
